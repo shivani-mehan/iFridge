@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42E0751D2448F01800BF5C49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0751C2448F01800BF5C49 /* HomeViewController.swift */; };
+		42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */; };
+		42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */; };
+		42E07535244A1F5000BF5C49 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E07534244A1F5000BF5C49 /* FoodItem.swift */; };
 		42FA9DEA244796CA00C871D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9DE9244796CA00C871D3 /* AppDelegate.swift */; };
 		42FA9DEC244796CA00C871D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9DEB244796CA00C871D3 /* SceneDelegate.swift */; };
 		42FA9DEE244796CA00C871D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9DED244796CA00C871D3 /* StartViewController.swift */; };
@@ -20,6 +23,26 @@
 
 /* Begin PBXFileReference section */
 		42E0751C2448F01800BF5C49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		42E0751F244951FB00BF5C49 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		42E07520244951FB00BF5C49 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		42E07521244951FB00BF5C49 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		42E07522244951FB00BF5C49 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		42E07523244951FB00BF5C49 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		42E07524244951FB00BF5C49 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		42E07525244951FB00BF5C49 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		42E07526244951FC00BF5C49 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		42E07527244951FC00BF5C49 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		42E07529244951FC00BF5C49 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		42E0752A244951FC00BF5C49 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		42E0752B244951FC00BF5C49 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		42E0752C244951FC00BF5C49 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		42E0752D244951FC00BF5C49 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		42E0752E244951FC00BF5C49 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		42E0752F244951FC00BF5C49 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		42E07530244951FD00BF5C49 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCellTableViewCell.swift; sourceTree = "<group>"; };
+		42E07534244A1F5000BF5C49 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		42FA9DE6244796CA00C871D3 /* iFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FA9DE9244796CA00C871D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FA9DEB244796CA00C871D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +66,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42E0751E244951C900BF5C49 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				42E07530244951FD00BF5C49 /* Poppins-Black.ttf */,
+				42E07522244951FB00BF5C49 /* Poppins-BlackItalic.ttf */,
+				42E0751F244951FB00BF5C49 /* Poppins-Bold.ttf */,
+				42E07520244951FB00BF5C49 /* Poppins-BoldItalic.ttf */,
+				42E0752A244951FC00BF5C49 /* Poppins-ExtraBold.ttf */,
+				42E0752B244951FC00BF5C49 /* Poppins-ExtraBoldItalic.ttf */,
+				42E07523244951FB00BF5C49 /* Poppins-ExtraLight.ttf */,
+				42E07527244951FC00BF5C49 /* Poppins-ExtraLightItalic.ttf */,
+				42E07525244951FB00BF5C49 /* Poppins-Italic.ttf */,
+				42E07529244951FC00BF5C49 /* Poppins-Light.ttf */,
+				42E07526244951FC00BF5C49 /* Poppins-LightItalic.ttf */,
+				42E0752F244951FC00BF5C49 /* Poppins-Medium.ttf */,
+				42E0752E244951FC00BF5C49 /* Poppins-MediumItalic.ttf */,
+				42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */,
+				42E0752C244951FC00BF5C49 /* Poppins-SemiBold.ttf */,
+				42E07521244951FB00BF5C49 /* Poppins-SemiBoldItalic.ttf */,
+				42E07524244951FB00BF5C49 /* Poppins-Thin.ttf */,
+				42E0752D244951FC00BF5C49 /* Poppins-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		42FA9DDD244796CA00C871D3 = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +116,11 @@
 				42FA9DFF2447E29200C871D3 /* LoginViewController.swift */,
 				42FA9E012447E4B500C871D3 /* SignUpViewController.swift */,
 				42E0751C2448F01800BF5C49 /* HomeViewController.swift */,
+				42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */,
+				42E07534244A1F5000BF5C49 /* FoodItem.swift */,
 				42FA9DEF244796CA00C871D3 /* Main.storyboard */,
 				42FA9DF2244796DA00C871D3 /* Assets.xcassets */,
+				42E0751E244951C900BF5C49 /* Fonts */,
 				42FA9DF4244796DA00C871D3 /* LaunchScreen.storyboard */,
 				42FA9DF7244796DA00C871D3 /* Info.plist */,
 			);
@@ -137,6 +188,7 @@
 				42FA9DF6244796DA00C871D3 /* LaunchScreen.storyboard in Resources */,
 				42FA9DF3244796DA00C871D3 /* Assets.xcassets in Resources */,
 				42FA9DF1244796CA00C871D3 /* Main.storyboard in Resources */,
+				42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,11 +199,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E07535244A1F5000BF5C49 /* FoodItem.swift in Sources */,
 				42FA9E002447E29200C871D3 /* LoginViewController.swift in Sources */,
 				42FA9DEE244796CA00C871D3 /* StartViewController.swift in Sources */,
 				42FA9DEA244796CA00C871D3 /* AppDelegate.swift in Sources */,
 				42FA9DEC244796CA00C871D3 /* SceneDelegate.swift in Sources */,
 				42FA9E022447E4B500C871D3 /* SignUpViewController.swift in Sources */,
+				42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */,
 				42E0751D2448F01800BF5C49 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
