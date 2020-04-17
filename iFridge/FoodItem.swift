@@ -11,5 +11,5 @@ import UIKit
 struct FoodItem {
     var foodName: String!
     var foodImage: UIImage!
-    var expiration: Int!
+    var expiration: String!
 }
