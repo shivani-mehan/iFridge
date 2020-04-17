@@ -51,6 +51,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })()
     }
     
+    
+    // This is going to be replaced with the user's fridge info from the database
     func populateArray(){
         let foodItem = FoodItem(foodName: "Bananas", foodImage: UIImage(named:"bananas")!, expiration: "3")
         food.append(foodItem)
@@ -59,14 +61,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: * - Menu Function
     @IBAction func openMenu(_ sender: Any) {
         if (menuShowing){
-            tableView.isHidden = false
             menuLeadingConstraint.constant = -205
             menuBackgroundImageLeadingConstraint.constant = -205
             UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             })
         } else {
-            tableView.isHidden = true
             menu.isHidden = false
             menuLeadingConstraint.constant = 0
             menuBackgroundImageLeadingConstraint.constant = 0
