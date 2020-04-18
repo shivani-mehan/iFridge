@@ -238,6 +238,114 @@
             </objects>
             <point key="canvasLocation" x="2020.289855072464" y="111.83035714285714"/>
         </scene>
+        <!--Add Food Item View Controller-->
+        <scene sceneID="OCe-w6-Rdj">
+            <objects>
+                <viewController id="KhS-NO-IMQ" customClass="AddFoodItemViewController" customModule="iFridge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QM3-th-Xfa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9S-Tf-1H7">
+                                <rect key="frame" x="11" y="280" width="141" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name of the food item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ev5-Hp-S0N">
+                                <rect key="frame" x="20" y="313" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expiration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-WE-rNg">
+                                <rect key="frame" x="11" y="369" width="108" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsQ-J3-bIa">
+                                <rect key="frame" x="11" y="475" width="75" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the number of days until expiration only" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBE-Is-Cx2">
+                                <rect key="frame" x="19" y="408" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGt-VZ-pp3">
+                                <rect key="frame" x="95" y="740" width="222" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="button_save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="KhS-NO-IMQ" eventType="touchUpInside" id="cGW-yc-8NW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQc-tR-XKg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9476940505" green="0.9476940505" blue="0.9476940505" alpha="0.30097381161971831" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2E-Ce-zCJ">
+                                <rect key="frame" x="58" y="109" width="297" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Add Food to Your Fridge!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="25" name="HelveticaNeue-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCh-Is-94m">
+                                <rect key="frame" x="11" y="147" width="390" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9476940505" green="0.9476940505" blue="0.9476940505" alpha="0.30056117957746481" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Recently went grocery shopping? Great! Add any food items that you want to track here. Please fill out each field as accurately as possible. Majority of products have an expiration date on them. </string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.up.doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bi9-4h-a34">
+                                <rect key="frame" x="106" y="499.33333333333394" width="201" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.93794029951095581" green="0.58474677801132202" blue="0.60092341899871826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zr1-yD-jAm" appends="YES" id="YXM-nv-xk7"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="x2F-xh-anp"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zr1-yD-jAm" appends="YES" id="Tht-qt-ykF"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="obY-VD-iKj"/>
+                    <connections>
+                        <outlet property="expirationTextField" destination="rBE-Is-Cx2" id="5d9-WE-Con"/>
+                        <outlet property="foodImage" destination="Bi9-4h-a34" id="42U-am-jyj"/>
+                        <outlet property="foodNameTextField" destination="ev5-Hp-S0N" id="sQm-mU-bCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jo-IE-ycJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zr1-yD-jAm">
+                    <connections>
+                        <action selector="tappedImage:" destination="KhS-NO-IMQ" id="L8E-mL-sOx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1872.4637681159422" y="1663.3928571428571"/>
+        </scene>
         <!--iFridge-->
         <scene sceneID="ls5-06-8Kq">
             <objects>
@@ -331,6 +439,9 @@
                                         <state key="normal" title="Add Item">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="KhS-NO-IMQ" kind="show" id="ylU-SW-WmV"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fridgeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KXP-EH-n6s">
                                         <rect key="frame" x="50" y="39" width="101" height="89"/>
@@ -435,8 +546,10 @@
     </scenes>
     <resources>
         <image name="MegaTron" width="1440" height="900"/>
+        <image name="arrow.up.doc" catalog="system" width="56" height="64"/>
         <image name="bananas" width="800" height="632"/>
         <image name="button_log-in" width="236" height="56"/>
+        <image name="button_save" width="219" height="66"/>
         <image name="button_sign-in" width="245" height="56"/>
         <image name="button_sign-up" width="256" height="56"/>
         <image name="fridgeLogo" width="512" height="512"/>

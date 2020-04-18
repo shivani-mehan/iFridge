@@ -11,6 +11,9 @@
 		42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */; };
 		42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */; };
 		42E07535244A1F5000BF5C49 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E07534244A1F5000BF5C49 /* FoodItem.swift */; };
+		42E07537244A69FC00BF5C49 /* AddFoodItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E07536244A69FC00BF5C49 /* AddFoodItemViewController.swift */; };
+		42E07539244AB8B200BF5C49 /* FoodItemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E07538244AB8B200BF5C49 /* FoodItemCollection.swift */; };
+		42E0753C244ABBD300BF5C49 /* SharingFoodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0753B244ABBD300BF5C49 /* SharingFoodCollection.swift */; };
 		42FA9DEA244796CA00C871D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9DE9244796CA00C871D3 /* AppDelegate.swift */; };
 		42FA9DEC244796CA00C871D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9DEB244796CA00C871D3 /* SceneDelegate.swift */; };
 		42FA9DEE244796CA00C871D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9DED244796CA00C871D3 /* StartViewController.swift */; };
@@ -43,6 +46,9 @@
 		42E07530244951FD00BF5C49 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
 		42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCellTableViewCell.swift; sourceTree = "<group>"; };
 		42E07534244A1F5000BF5C49 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		42E07536244A69FC00BF5C49 /* AddFoodItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodItemViewController.swift; sourceTree = "<group>"; };
+		42E07538244AB8B200BF5C49 /* FoodItemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemCollection.swift; sourceTree = "<group>"; };
+		42E0753B244ABBD300BF5C49 /* SharingFoodCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingFoodCollection.swift; sourceTree = "<group>"; };
 		42FA9DE6244796CA00C871D3 /* iFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FA9DE9244796CA00C871D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FA9DEB244796CA00C871D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,36 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		42E0753A244ABB1000BF5C49 /* Food Item Files  */ = {
+			isa = PBXGroup;
+			children = (
+				42E07534244A1F5000BF5C49 /* FoodItem.swift */,
+				42E07538244AB8B200BF5C49 /* FoodItemCollection.swift */,
+				42E0753B244ABBD300BF5C49 /* SharingFoodCollection.swift */,
+			);
+			path = "Food Item Files ";
+			sourceTree = "<group>";
+		};
+		42E0753E244ABC9300BF5C49 /* Homepage View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42E0751C2448F01800BF5C49 /* HomeViewController.swift */,
+				42E07536244A69FC00BF5C49 /* AddFoodItemViewController.swift */,
+				42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */,
+			);
+			path = "Homepage View Controllers";
+			sourceTree = "<group>";
+		};
+		42E0753F244ABCDB00BF5C49 /* Login View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42FA9DED244796CA00C871D3 /* StartViewController.swift */,
+				42FA9DFF2447E29200C871D3 /* LoginViewController.swift */,
+				42FA9E012447E4B500C871D3 /* SignUpViewController.swift */,
+			);
+			path = "Login View Controllers";
+			sourceTree = "<group>";
+		};
 		42FA9DDD244796CA00C871D3 = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +148,9 @@
 			children = (
 				42FA9DE9244796CA00C871D3 /* AppDelegate.swift */,
 				42FA9DEB244796CA00C871D3 /* SceneDelegate.swift */,
-				42FA9DED244796CA00C871D3 /* StartViewController.swift */,
-				42FA9DFF2447E29200C871D3 /* LoginViewController.swift */,
-				42FA9E012447E4B500C871D3 /* SignUpViewController.swift */,
-				42E0751C2448F01800BF5C49 /* HomeViewController.swift */,
-				42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */,
-				42E07534244A1F5000BF5C49 /* FoodItem.swift */,
+				42E0753F244ABCDB00BF5C49 /* Login View Controllers */,
+				42E0753E244ABC9300BF5C49 /* Homepage View Controllers */,
+				42E0753A244ABB1000BF5C49 /* Food Item Files  */,
 				42FA9DEF244796CA00C871D3 /* Main.storyboard */,
 				42FA9DF2244796DA00C871D3 /* Assets.xcassets */,
 				42E0751E244951C900BF5C49 /* Fonts */,
@@ -201,12 +234,15 @@
 			files = (
 				42E07535244A1F5000BF5C49 /* FoodItem.swift in Sources */,
 				42FA9E002447E29200C871D3 /* LoginViewController.swift in Sources */,
+				42E07539244AB8B200BF5C49 /* FoodItemCollection.swift in Sources */,
 				42FA9DEE244796CA00C871D3 /* StartViewController.swift in Sources */,
+				42E0753C244ABBD300BF5C49 /* SharingFoodCollection.swift in Sources */,
 				42FA9DEA244796CA00C871D3 /* AppDelegate.swift in Sources */,
 				42FA9DEC244796CA00C871D3 /* SceneDelegate.swift in Sources */,
 				42FA9E022447E4B500C871D3 /* SignUpViewController.swift in Sources */,
 				42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */,
 				42E0751D2448F01800BF5C49 /* HomeViewController.swift in Sources */,
+				42E07537244A69FC00BF5C49 /* AddFoodItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

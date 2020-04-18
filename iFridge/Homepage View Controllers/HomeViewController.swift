@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var resultSearchController = UISearchController()
     
     // Arrays
+    var sharedFoodCollection : FoodItemCollection? // this will be the unique FoodCollection we want to work with
     var food: [FoodItem] = []
     var filteredTableData = [FoodItem]()
     
@@ -25,16 +26,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var menu: UIView!
     var menuShowing = false
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        sharedFoodCollection = SharingFoodCollection.sharedFoodCollection.foodCollection
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Populate food array with items
-        populateArray()
-        
         // Table View delegate
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        _ = SharingFoodCollection()
+        SharingFoodCollection.sharedFoodCollection.foodCollection = FoodItemCollection()
+        SharingFoodCollection.sharedFoodCollection.loadFoodCollection()
+        sharedFoodCollection = SharingFoodCollection.sharedFoodCollection.foodCollection
         
         // Search Bar Set Up
         self.resultSearchController = ({
@@ -43,19 +51,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             controller.searchResultsUpdater = self
             controller.searchBar.sizeToFit()
             controller.searchBar.prompt = "Search Your Fridge!"
-            controller.searchBar.placeholder = "What are we looking for?"
+            controller.searchBar.placeholder = "Search for foods or by expiration date"
             
             self.tableView.tableHeaderView = controller.searchBar
             return controller
             
         })()
-    }
-    
-    
-    // This is going to be replaced with the user's fridge info from the database
-    func populateArray(){
-        let foodItem = FoodItem(foodName: "Bananas", foodImage: UIImage(named:"bananas")!, expiration: "3")
-        food.append(foodItem)
     }
     
     // MARK: * - Menu Function
@@ -88,23 +89,35 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (self.resultSearchController.isActive) {
             return self.filteredTableData.count
         } else {
-            return food.count
+            return (sharedFoodCollection?.collection.count)!
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "fridgeCell") as! FridgeCellTableViewCell
-
+        
         if (self.resultSearchController.isActive) {
-             let foodItem = filteredTableData[indexPath.row]
-             cell.setFridgeCell(food: foodItem)
+            let foodItem = filteredTableData[indexPath.row]
+            cell.setFridgeCell(food: foodItem)
             
             return cell
         } else {
-            let foodItem = food[indexPath.row]
+            let foodItem = (sharedFoodCollection?.collection[indexPath.row])!
             cell.setFridgeCell(food: foodItem)
             
-            return cell}
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {                  (action, sourceView, completionHandler) in
+            //Delete
+            self.sharedFoodCollection?.removeFoodAt(index: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade) // Call completion handler to dismiss the action button
+            completionHandler(true)          }
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return swipeConfiguration
     }
     
     // MARK: * - Search Bar Methods
@@ -112,13 +125,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func updateSearchResults(for searchController: UISearchController) {
         filteredTableData.removeAll(keepingCapacity: false)
         let searchTerm = searchController.searchBar.text!
-                
-        let array = food.filter { food in
+        
+        let array = sharedFoodCollection?.collection.filter { food in
             return food.foodName.contains(searchTerm) ||
-                   food.expiration.contains(searchTerm)
+                food.expiration.contains(searchTerm)
         }
         
-        filteredTableData = array
+        filteredTableData = (array)!
         self.tableView.reloadData()
     }
 }
