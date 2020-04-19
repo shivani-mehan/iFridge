@@ -32,4 +32,6 @@ class SignUpViewController: UIViewController {
     }
     */
 
+    @IBAction func signInPressed(_ sender: Any) {
+    }
 }

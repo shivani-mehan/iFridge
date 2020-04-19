@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,4 +31,6 @@ class LoginViewController: UIViewController {
     }
     */
 
+    @IBAction func loginPressed(_ sender: Any) {
+    }
 }

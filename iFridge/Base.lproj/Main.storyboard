@@ -119,6 +119,7 @@
                                 <rect key="frame" x="65" y="627" width="283" height="56"/>
                                 <state key="normal" image="button_sign-up"/>
                                 <connections>
+                                    <action selector="signInPressed:" destination="XeD-aI-5SZ" eventType="touchDown" id="luO-OI-dTD"/>
                                     <segue destination="Ttq-HH-dxg" kind="show" id="sw9-Kx-b7D"/>
                                 </connections>
                             </button>
@@ -217,6 +218,7 @@
                                 <rect key="frame" x="73" y="608" width="267" height="56"/>
                                 <state key="normal" image="button_log-in"/>
                                 <connections>
+                                    <action selector="loginPressed:" destination="ZNE-zB-1Vs" eventType="touchDown" id="KZ7-gt-jgb"/>
                                     <segue destination="Ttq-HH-dxg" kind="show" id="0L9-f8-E8b"/>
                                 </connections>
                             </button>
@@ -247,6 +249,11 @@
                         <viewLayoutGuide key="safeArea" id="l2a-wT-aC5"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qtb-BA-TyD"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="iHS-qb-QN7" id="bRG-cT-aSU"/>
+                        <outlet property="loginButton" destination="sPS-pz-j7j" id="hhf-TF-IEV"/>
+                        <outlet property="passwordTextField" destination="0qJ-Tw-wz2" id="s5w-bc-GJq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GU-e3-vag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -701,6 +708,6 @@
         <image name="hamburgerMenu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sw9-Kx-b7D"/>
+        <segue reference="0L9-f8-E8b"/>
     </inferredMetricsTieBreakers>
 </document>
