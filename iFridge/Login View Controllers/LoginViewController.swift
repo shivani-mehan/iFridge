@@ -10,14 +10,20 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
 
 
         // Do any additional setup after loading the view.
+    }
+    func setUp(){
+        errorLabel.alpha = 0 //hide error label if not in use
+        
     }
     
 

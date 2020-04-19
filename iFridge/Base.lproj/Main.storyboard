@@ -222,6 +222,13 @@
                                     <segue destination="Ttq-HH-dxg" kind="show" id="0L9-f8-E8b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZo-KL-uet">
+                                <rect key="frame" x="141" y="730" width="56" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -251,6 +258,7 @@
                     <navigationItem key="navigationItem" id="Qtb-BA-TyD"/>
                     <connections>
                         <outlet property="emailTextField" destination="iHS-qb-QN7" id="bRG-cT-aSU"/>
+                        <outlet property="errorLabel" destination="RZo-KL-uet" id="pL5-KJ-OKN"/>
                         <outlet property="loginButton" destination="sPS-pz-j7j" id="hhf-TF-IEV"/>
                         <outlet property="passwordTextField" destination="0qJ-Tw-wz2" id="s5w-bc-GJq"/>
                     </connections>

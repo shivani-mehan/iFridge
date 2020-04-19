@@ -19,6 +19,12 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setUp()
+    }
+    
+    func setUp(){
+        errorLabel.alpha = 0 //hide error label if not in use
+        
     }
     
 
