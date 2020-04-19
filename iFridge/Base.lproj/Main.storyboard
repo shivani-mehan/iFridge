@@ -122,6 +122,13 @@
                                     <segue destination="Ttq-HH-dxg" kind="show" id="sw9-Kx-b7D"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnV-Ec-ErY" userLabel="Error Label">
+                                <rect key="frame" x="104" y="738" width="80" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -154,6 +161,13 @@
                         <viewLayoutGuide key="safeArea" id="kUU-Td-jra"/>
                     </view>
                     <navigationItem key="navigationItem" id="tdm-no-0vE"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="24f-fm-Npp" id="BDy-pT-C3l"/>
+                        <outlet property="errorLabel" destination="fnV-Ec-ErY" id="Yav-GO-hv8"/>
+                        <outlet property="passwordMatchTextField" destination="7tr-DF-Qhr" id="TfH-hU-awR"/>
+                        <outlet property="passwordTextField" destination="c5R-1H-4Rd" id="Kmx-8y-g4A"/>
+                        <outlet property="signUpButton" destination="nQg-ca-HrJ" id="dab-Q7-5Wc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4c-AA-Kh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -687,6 +701,6 @@
         <image name="hamburgerMenu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0L9-f8-E8b"/>
+        <segue reference="sw9-Kx-b7D"/>
     </inferredMetricsTieBreakers>
 </document>
