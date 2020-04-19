@@ -55,7 +55,7 @@ class FoodItem: NSObject, NSCoding {
         return self.foodImage
     }
     
-    func getFruitName() -> String{
+    func getFoodName() -> String{
         return self.foodName
     }
     

@@ -120,6 +120,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return swipeConfiguration
     }
     
+    //MARK: Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        if (segue.destination is DetailViewController){
+            guard let selectedFoodCell = sender as? FridgeCellTableViewCell
+                else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedFoodCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            sharedFoodCollection?.setCurrentIndex(to: indexPath.row)
+        }
+        
+    }
+    
     // MARK: * - Search Bar Methods
     
     func updateSearchResults(for searchController: UISearchController) {
