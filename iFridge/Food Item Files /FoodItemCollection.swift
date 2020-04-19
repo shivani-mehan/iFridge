@@ -21,9 +21,11 @@ class FoodItemCollection: NSObject, NSCoding {
         setup()
     }
     
-    // Read database and populate the collection?
+    // Read database and populate the collection? **
     func setup(){
-        
+        // Sample food
+        let food = FoodItem(foodName: "Bananas", foodImage: UIImage(named: "bananas")!, expiration: "3")
+        self.collection.append(food!)
     }
     
     func encode(with acoder: NSCoder) {

@@ -19,9 +19,11 @@ class FridgeCellTableViewCell: UITableViewCell {
         foodImage.image = food.foodImage
         
         let expired = food.checkIfExpired()
+        
         if (expired){
             expiration.text = "Expired!"
         } else {
+            food.calculateDaysUntilExpiry()
             expiration.text = String(food.expiration) + " days"
         }
     }

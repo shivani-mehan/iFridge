@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import UserNotifications
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
     // Table and Search Bar Outlets
     @IBOutlet weak var tableView: UITableView!
-    
     var resultSearchController = UISearchController()
     
     // Arrays
@@ -34,6 +34,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Request Notification Access
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            print("notification request granted: (\(granted))")
+        }
         
         // Table View delegate
         self.tableView.delegate = self
@@ -123,11 +128,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-
+        
         if (segue.destination is DetailViewController){
             guard let selectedFoodCell = sender as? FridgeCellTableViewCell
                 else {
-                fatalError("Unexpected sender: \(String(describing: sender))")
+                    fatalError("Unexpected sender: \(String(describing: sender))")
             }
             
             guard let indexPath = tableView.indexPath(for: selectedFoodCell) else {

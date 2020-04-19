@@ -54,6 +54,7 @@ class FoodItem: NSObject, NSCoding {
         self.expiryDate = modifiedDate
     } //init?
     
+    // MARK: - Helper Functions
         
     func getExpiryDate() -> Date {
         return self.expiryDate
@@ -77,8 +78,25 @@ class FoodItem: NSObject, NSCoding {
     
     func checkIfExpired() -> Bool {
         let comparison = Calendar.current.compare(self.inputDate, to: self.expiryDate, toGranularity: .day)
+        
         return (comparison == .orderedSame)
     }
     
+    func calculateDaysUntilExpiry() {
+        let date1 = Calendar.current.startOfDay(for: self.inputDate)
+        let date2 = Calendar.current.startOfDay(for: self.expiryDate)
+        
+        let daysUntilExpiry = Calendar.current.dateComponents([.day], from: date1, to: date2)
+        self.expiration = String(daysUntilExpiry.day!)
+    }
+    
+    // MARK: - For debugging purposes
+    func changeInputDate(date: Date){
+        self.inputDate = date
+    }
+    
+    func changeExpiryDate(date: Date){
+        self.expiryDate = date
+    }
 }
 

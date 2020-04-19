@@ -579,9 +579,8 @@
                                     <constraint firstAttribute="width" secondItem="KPr-aw-ISB" secondAttribute="height" multiplier="7:5" id="gah-jj-II2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAm-MH-aCz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAm-MH-aCz">
                                 <rect key="frame" x="61" y="667" width="160" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Time Remaining:">
                                         <attributes>
@@ -592,9 +591,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMX-c5-ve2">
-                                <rect key="frame" x="100" y="606" width="121" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMX-c5-ve2">
+                                <rect key="frame" x="100" y="606" width="115.33333333333331" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Expiry Date:">
                                         <attributes>
@@ -606,16 +604,14 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="02/02/02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRn-Nc-nWT">
-                                <rect key="frame" x="245" y="606" width="85" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/02/02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRn-Nc-nWT">
+                                <rect key="frame" x="244.99999999999997" y="606" width="81.666666666666657" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.93794029951095581" green="0.58474677801132202" blue="0.60092341899871826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.93794029951095581" green="0.58474677801132202" blue="0.60092341899871826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F11-vJ-yha">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F11-vJ-yha">
                                 <rect key="frame" x="245" y="667" width="62" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="3 days">
                                         <attributes>
@@ -630,9 +626,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="iRn-Nc-nWT" firstAttribute="top" secondItem="KPr-aw-ISB" secondAttribute="bottom" constant="80" id="0qw-MF-J1f"/>
                             <constraint firstItem="KPr-aw-ISB" firstAttribute="top" secondItem="bPJ-pl-UqP" secondAttribute="bottom" constant="47" id="0tS-1L-Mfc"/>
+                            <constraint firstItem="XMX-c5-ve2" firstAttribute="top" secondItem="KPr-aw-ISB" secondAttribute="bottom" constant="80" id="BML-97-GI0"/>
+                            <constraint firstItem="qAm-MH-aCz" firstAttribute="top" secondItem="XMX-c5-ve2" secondAttribute="bottom" constant="37" id="EBd-96-R7Y"/>
+                            <constraint firstItem="F11-vJ-yha" firstAttribute="top" secondItem="iRn-Nc-nWT" secondAttribute="bottom" constant="37" id="EwW-Zh-Tsl"/>
+                            <constraint firstItem="CvW-oV-Gy5" firstAttribute="bottom" secondItem="qAm-MH-aCz" secondAttribute="bottom" constant="171" id="FSE-G7-S85"/>
                             <constraint firstItem="CvW-oV-Gy5" firstAttribute="trailing" secondItem="KPr-aw-ISB" secondAttribute="trailing" constant="32" id="LVY-i3-C6N"/>
+                            <constraint firstItem="CvW-oV-Gy5" firstAttribute="bottom" secondItem="F11-vJ-yha" secondAttribute="bottom" constant="171" id="MBu-XX-LP5"/>
                             <constraint firstItem="bPJ-pl-UqP" firstAttribute="top" secondItem="CvW-oV-Gy5" secondAttribute="top" constant="102" id="ONv-2T-6BO"/>
+                            <constraint firstItem="XMX-c5-ve2" firstAttribute="leading" secondItem="CvW-oV-Gy5" secondAttribute="leading" constant="100" id="Zyy-gX-2Vj"/>
+                            <constraint firstItem="iRn-Nc-nWT" firstAttribute="leading" secondItem="XMX-c5-ve2" secondAttribute="trailing" constant="29.670000000000002" id="anh-7D-WyU"/>
+                            <constraint firstItem="F11-vJ-yha" firstAttribute="leading" secondItem="qAm-MH-aCz" secondAttribute="trailing" constant="24" id="o68-3z-cC0"/>
+                            <constraint firstItem="qAm-MH-aCz" firstAttribute="leading" secondItem="CvW-oV-Gy5" secondAttribute="leading" constant="61" id="pse-QG-daA"/>
                             <constraint firstItem="bPJ-pl-UqP" firstAttribute="centerX" secondItem="z1P-Bt-UyR" secondAttribute="centerX" id="rMN-JT-4XM"/>
                             <constraint firstItem="KPr-aw-ISB" firstAttribute="leading" secondItem="CvW-oV-Gy5" secondAttribute="leading" constant="32" id="t6h-k3-Aw2"/>
                         </constraints>
