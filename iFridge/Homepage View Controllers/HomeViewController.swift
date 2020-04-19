@@ -26,6 +26,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var menu: UIView!
     var menuShowing = false
     
+    // MARK: - Setup methods
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         sharedFoodCollection = SharingFoodCollection.sharedFoodCollection.foodCollection
@@ -39,6 +41,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("notification request granted: (\(granted))")
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(selectExpiredItem(_:)), name: NSNotification.Name("expiredFoodItem"), object: nil)
         
         // Table View delegate
         self.tableView.delegate = self
@@ -64,7 +68,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })()
     }
     
-    // MARK: * - Menu Function
+    @objc func selectExpiredItem(_ notification: NSNotification){
+        if let foodID = notification.userInfo?["food"] as? String {
+            var selectRow: Int? = nil
+            for food in sharedFoodCollection!.collection {
+                if food.foodName == foodID {
+                    selectRow = sharedFoodCollection?.collection.firstIndex(of: food)!
+                    let path = IndexPath(row: selectRow!, section: 0)
+                    self.tableView.reloadData()
+                    self.tableView.selectRow(at: path, animated: true, scrollPosition: .top)
+                    selectRow = nil
+                    break
+                }
+            }
+        }
+    }
+    
+    // MARK: - Actions
     @IBAction func openMenu(_ sender: Any) {
         if (menuShowing){
             menuLeadingConstraint.constant = -205
@@ -83,13 +103,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuShowing = !menuShowing
     }
     
-    // MARK: * - Logout button
     @IBAction func logoutButton(_ sender: Any) {
         performSegue(withIdentifier: "unwindToStart", sender: self)
     }
     
     
-    // MARK: * - Table Methods
+    // MARK:  - Table Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.resultSearchController.isActive) {
             return self.filteredTableData.count
@@ -125,7 +144,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return swipeConfiguration
     }
     
-    //MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -143,7 +161,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    // MARK: * - Search Bar Methods
+    // MARK:  - Search Bar Methods
     
     func updateSearchResults(for searchController: UISearchController) {
         filteredTableData.removeAll(keepingCapacity: false)

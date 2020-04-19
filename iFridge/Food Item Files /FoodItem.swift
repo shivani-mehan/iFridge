@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 import UIKit
 import os.log
 
@@ -16,6 +17,7 @@ class FoodItem: NSObject, NSCoding {
       var expiration: String!
       var inputDate: Date!
       var expiryDate: Date!
+      var isExpired = false
  
     struct PropertyKey {
         static let foodName = "foodName"
@@ -79,7 +81,26 @@ class FoodItem: NSObject, NSCoding {
     func checkIfExpired() -> Bool {
         let comparison = Calendar.current.compare(self.inputDate, to: self.expiryDate, toGranularity: .day)
         
+        // Make notification for when item is expired (only once)
+        if (comparison == .orderedSame && isExpired == false){
+           isExpired = true
+           setupNotification()
+        }
+        
         return (comparison == .orderedSame)
+    }
+    
+    func setupNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "\(String(describing: self.foodName!)) has expired!"
+        content.body = "Click this notification to be taken to the item."
+        content.sound = UNNotificationSound.default
+        content.userInfo = ["food": self.foodName!] // You can retrieve this when displaying notification
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     func calculateDaysUntilExpiry() {
