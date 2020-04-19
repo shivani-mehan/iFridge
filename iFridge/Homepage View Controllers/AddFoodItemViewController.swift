@@ -44,7 +44,7 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
             
             foodNameTextField.text = ""
             expirationTextField.text = ""
-            foodImage.image = UIImage(named: "arrow.up.doc")
+            foodImage.image = UIImage(systemName: "arrow.up.doc")
         }
     }
     

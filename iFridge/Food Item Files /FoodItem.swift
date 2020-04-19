@@ -14,6 +14,8 @@ class FoodItem: NSObject, NSCoding {
       var foodName: String!
       var foodImage: UIImage!
       var expiration: String!
+      var inputDate: Date!
+      var expiryDate: Date!
  
     struct PropertyKey {
         static let foodName = "foodName"
@@ -44,9 +46,23 @@ class FoodItem: NSObject, NSCoding {
         self.foodName = foodName
         self.foodImage = foodImage
         self.expiration = expiration
+        
+        let today = Date()
+        self.inputDate = today
+        
+        let modifiedDate = Calendar.current.date(byAdding: .day, value: Int(expiration)!, to: today)!
+        self.expiryDate = modifiedDate
     } //init?
     
         
+    func getExpiryDate() -> Date {
+        return self.expiryDate
+    }
+    
+    func getInputDate() -> Date {
+        return self.inputDate
+    }
+    
     func getExpiration() -> String {
         return self.expiration
     }
@@ -57,6 +73,11 @@ class FoodItem: NSObject, NSCoding {
     
     func getFoodName() -> String{
         return self.foodName
+    }
+    
+    func checkIfExpired() -> Bool {
+        let comparison = Calendar.current.compare(self.inputDate, to: self.expiryDate, toGranularity: .day)
+        return (comparison == .orderedSame)
     }
     
 }

@@ -572,38 +572,55 @@
                                 <color key="textColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-aw-ISB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bananas" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-aw-ISB">
                                 <rect key="frame" x="32" y="276" width="350" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="aWF-Sd-fef"/>
                                     <constraint firstAttribute="width" secondItem="KPr-aw-ISB" secondAttribute="height" multiplier="7:5" id="gah-jj-II2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAm-MH-aCz">
-                                <rect key="frame" x="36" y="591" width="343" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAm-MH-aCz">
+                                <rect key="frame" x="61" y="667" width="160" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Time Remaining Until Expiry:">
+                                    <fragment content="Time Remaining:">
                                         <attributes>
                                             <color key="NSColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="25" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciU-gg-mLN">
-                                <rect key="frame" x="186" y="659" width="72" height="39"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
-                                <color key="textColor" red="0.93794029951095581" green="0.58474677801132202" blue="0.60092341899871826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMX-c5-ve2">
+                                <rect key="frame" x="100" y="606" width="121" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Expiry Date:">
+                                        <attributes>
+                                            <color key="NSColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F11-vJ-yha">
-                                <rect key="frame" x="160" y="658" width="18" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="02/02/02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRn-Nc-nWT">
+                                <rect key="frame" x="245" y="606" width="85" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.93794029951095581" green="0.58474677801132202" blue="0.60092341899871826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.93794029951095581" green="0.58474677801132202" blue="0.60092341899871826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F11-vJ-yha">
+                                <rect key="frame" x="245" y="667" width="62" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="3">
+                                    <fragment content="3 days">
                                         <attributes>
                                             <color key="NSColor" red="0.93794029951095581" green="0.58474677801132202" blue="0.60092341899871826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="32" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -613,17 +630,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="F11-vJ-yha" firstAttribute="top" secondItem="qAm-MH-aCz" secondAttribute="bottom" constant="37" id="0hW-me-63U"/>
                             <constraint firstItem="KPr-aw-ISB" firstAttribute="top" secondItem="bPJ-pl-UqP" secondAttribute="bottom" constant="47" id="0tS-1L-Mfc"/>
-                            <constraint firstItem="qAm-MH-aCz" firstAttribute="leading" secondItem="CvW-oV-Gy5" secondAttribute="leading" constant="36" id="111-Vl-FUd"/>
                             <constraint firstItem="CvW-oV-Gy5" firstAttribute="trailing" secondItem="KPr-aw-ISB" secondAttribute="trailing" constant="32" id="LVY-i3-C6N"/>
-                            <constraint firstItem="CvW-oV-Gy5" firstAttribute="bottom" secondItem="ciU-gg-mLN" secondAttribute="bottom" constant="164" id="M7U-di-H8r"/>
-                            <constraint firstItem="ciU-gg-mLN" firstAttribute="top" secondItem="qAm-MH-aCz" secondAttribute="bottom" constant="38" id="NZc-Nq-I6y"/>
                             <constraint firstItem="bPJ-pl-UqP" firstAttribute="top" secondItem="CvW-oV-Gy5" secondAttribute="top" constant="102" id="ONv-2T-6BO"/>
-                            <constraint firstItem="qAm-MH-aCz" firstAttribute="top" secondItem="KPr-aw-ISB" secondAttribute="bottom" constant="65" id="Sa9-54-0f6"/>
-                            <constraint firstItem="F11-vJ-yha" firstAttribute="leading" secondItem="CvW-oV-Gy5" secondAttribute="leading" constant="160" id="atV-pZ-DyE"/>
                             <constraint firstItem="bPJ-pl-UqP" firstAttribute="centerX" secondItem="z1P-Bt-UyR" secondAttribute="centerX" id="rMN-JT-4XM"/>
-                            <constraint firstItem="ciU-gg-mLN" firstAttribute="leading" secondItem="F11-vJ-yha" secondAttribute="trailing" constant="8" id="s80-3B-qP1"/>
                             <constraint firstItem="KPr-aw-ISB" firstAttribute="leading" secondItem="CvW-oV-Gy5" secondAttribute="leading" constant="32" id="t6h-k3-Aw2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CvW-oV-Gy5"/>
@@ -631,6 +641,7 @@
                     <navigationItem key="navigationItem" id="NAA-rP-q3Y"/>
                     <connections>
                         <outlet property="expiration" destination="F11-vJ-yha" id="DbM-vc-1bF"/>
+                        <outlet property="expiryDate" destination="iRn-Nc-nWT" id="QVP-CH-X1o"/>
                         <outlet property="foodImage" destination="KPr-aw-ISB" id="rN2-7Y-Am5"/>
                         <outlet property="foodName" destination="bPJ-pl-UqP" id="Vzc-jf-isz"/>
                     </connections>
