@@ -22,6 +22,7 @@
                                 <rect key="frame" x="85" y="581" width="244" height="56"/>
                                 <state key="normal" image="button_sign-in"/>
                                 <connections>
+                                    <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oYX-RV-gWB"/>
                                     <segue destination="ZNE-zB-1Vs" kind="show" id="QcH-Bt-gxj"/>
                                 </connections>
                             </button>
@@ -29,6 +30,7 @@
                                 <rect key="frame" x="85" y="656" width="244" height="56"/>
                                 <state key="normal" image="button_sign-up"/>
                                 <connections>
+                                    <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="87x-5K-XfL"/>
                                     <segue destination="XeD-aI-5SZ" kind="show" id="F7O-h4-CiV"/>
                                 </connections>
                             </button>
@@ -59,6 +61,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="mKa-bx-sYL"/>
+                    <connections>
+                        <outlet property="SignUpButton" destination="702-RD-2KH" id="HNv-7U-Tyw"/>
+                        <outlet property="signInButton" destination="kie-ev-ehR" id="4BT-JQ-65g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -716,6 +722,6 @@
         <image name="hamburgerMenu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0L9-f8-E8b"/>
+        <segue reference="sw9-Kx-b7D"/>
     </inferredMetricsTieBreakers>
 </document>

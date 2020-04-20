@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16267F04244D1EEA00C9F994 /* fridge_opening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 16267F03244D1EEA00C9F994 /* fridge_opening.mp4 */; };
+		16267F06244D1FEE00C9F994 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */; };
 		42E0751D2448F01800BF5C49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0751C2448F01800BF5C49 /* HomeViewController.swift */; };
 		42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */; };
 		42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		0B2EE4D30FAE7370D1CB2FE9 /* Pods_iFridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16267F03244D1EEA00C9F994 /* fridge_opening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fridge_opening.mp4; sourceTree = "<group>"; };
+		16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFridge.release.xcconfig"; path = "Target Support Files/Pods-iFridge/Pods-iFridge.release.xcconfig"; sourceTree = "<group>"; };
 		42E0751C2448F01800BF5C49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42E0751F244951FB00BF5C49 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		42FA9DE8244796CA00C871D3 /* iFridge */ = {
 			isa = PBXGroup;
 			children = (
+				16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */,
+				16267F03244D1EEA00C9F994 /* fridge_opening.mp4 */,
 				16267F02244D19C500C9F994 /* Utilities */,
 				42FA9DE9244796CA00C871D3 /* AppDelegate.swift */,
 				42FA9DEB244796CA00C871D3 /* SceneDelegate.swift */,
@@ -192,7 +198,6 @@
 				B50760BAF7068AD18C7E7433 /* Pods-iFridge.debug.xcconfig */,
 				42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -257,9 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FA9DF6244796DA00C871D3 /* LaunchScreen.storyboard in Resources */,
+				16267F04244D1EEA00C9F994 /* fridge_opening.mp4 in Resources */,
 				42FA9DF3244796DA00C871D3 /* Assets.xcassets in Resources */,
 				42FA9DF1244796CA00C871D3 /* Main.storyboard in Resources */,
 				42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */,
+				16267F06244D1FEE00C9F994 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wlu.iFridge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlu.iFridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -492,7 +499,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wlu.iFridge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlu.iFridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
