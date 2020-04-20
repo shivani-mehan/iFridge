@@ -63,6 +63,7 @@
                     <navigationItem key="navigationItem" id="mKa-bx-sYL"/>
                     <connections>
                         <outlet property="SignUpButton" destination="702-RD-2KH" id="HNv-7U-Tyw"/>
+                        <outlet property="imageBG" destination="XSs-pX-LAy" id="cUI-ar-50Z"/>
                         <outlet property="signInButton" destination="kie-ev-ehR" id="4BT-JQ-65g"/>
                     </connections>
                 </viewController>

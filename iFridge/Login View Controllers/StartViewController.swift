@@ -12,6 +12,7 @@ import AVKit
 
 class StartViewController: UIViewController {
     
+    @IBOutlet weak var imageBG: UIImageView!
     var videoPlayer:AVPlayer?
     
     var videoPlayerLayer:AVPlayerLayer?
@@ -25,9 +26,12 @@ class StartViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        setUpVideo()
+//        super.viewWillAppear(animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        // MARK:- Change this to 1 if you wanna hide the video
+        imageBG.alpha=0
+        setUp()
 
     }
 
@@ -44,10 +48,10 @@ class StartViewController: UIViewController {
     }
     
     //Testing video login
-    func setUpVideo() {
+    func setUp() {
         
         // Get the path to the resource in the bundle
-        let bundlePath = Bundle.main.path(forResource: "fridge_opening", ofType: "mp4")
+        let bundlePath = Bundle.main.path(forResource: "fridge_lady", ofType: "mp4")
         
         guard bundlePath != nil else {
             return
@@ -66,12 +70,12 @@ class StartViewController: UIViewController {
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer!)
         
         // Adjust the size and frame
-        videoPlayerLayer?.frame = CGRect(x: -self.view.frame.size.width*1.5, y: 0, width: self.view.frame.size.width*4, height: self.view.frame.size.height)
+        videoPlayerLayer?.frame = CGRect(x: -self.view.frame.size.width*1.6, y: 0, width: self.view.frame.size.width*4, height: self.view.frame.size.height)
         
         view.layer.insertSublayer(videoPlayerLayer!, at: 0)
         
         // Add it to the view and play it
-        videoPlayer?.playImmediately(atRate: 0.3)
+        videoPlayer?.playImmediately(atRate: 1.2)
     }
 
     
