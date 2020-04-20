@@ -54,12 +54,29 @@ class LoginViewController: UIViewController {
                 self.errorLabel.alpha = 1
             }
             else {
-                //need to handle moving to home
-                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome") as? HomeViewController
+                //display alert and move to home
+                let index = email.firstIndex(of: "@")
+                let name = email.prefix(upTo: index!).uppercased()
+                
 
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
+                let alert = UIAlertController(title: "WELCOME BACK \(name)", message: "Have a nice day!", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "You too!", style: .default, handler: self.someHandler))
+                alert.addAction(UIAlertAction(title: "You as well!", style: .default, handler: self.someHandler))
+
+                self.present(alert, animated: true)
+                
+
+
+
             }
         }
+    }
+    
+    func someHandler(alert: UIAlertAction!) {
+        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome") as? HomeViewController
+
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
     }
 }
