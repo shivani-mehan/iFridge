@@ -54,16 +54,17 @@ class SignUpViewController: UIViewController {
             return "Please fill in all fields."
         }
         
+        
+        //MARK: - Need to fix password validation. Password automatically needs to be > 6 length. Having trouble comparing them
         if passwordTextField.text!.count < 6 {
             return "password must be at least 6 characters"
         }
         
-        if passwordMatchTextField != passwordTextField{
-            return "Passwords do not match"
-        }
+//        if passwordMatchTextField != passwordTextField{
+//            return "Passwords do not match"
+//        }
         
         
-            
             
 //        let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 //
@@ -91,7 +92,7 @@ class SignUpViewController: UIViewController {
         
         //show error via label
         if error != nil {
-            displayError("ERROR PLEASE RESTART APP")
+            displayError(error!)
         }
         // no errors, continue to create user w/ firebase auth
         else {
@@ -130,14 +131,18 @@ class SignUpViewController: UIViewController {
                     }
                     
                     // Transition to the home view
-                    self.transitionToHome()
+                    let homeViewController = self.storyboard?.instantiateViewController(identifier: "iFridgeHome") as? HomeViewController
+            
+                    self.view.window?.rootViewController = homeViewController
+                    self.view.window?.makeKeyAndVisible()
                     
-                    let alert = UIAlertController(title: "GREAT SUCCESS!", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
-
-                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: nil))
-
-                    self.present(alert, animated: true)
+                        //MARK: - alert for testing
+//                    let alert = UIAlertController(title: "GREAT SUCCESS!", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+//
+//                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+//                    alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: nil))
+//
+//                    self.present(alert, animated: true)
                     
                 }
                 
