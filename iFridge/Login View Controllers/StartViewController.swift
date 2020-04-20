@@ -30,7 +30,7 @@ class StartViewController: UIViewController {
 //        navigationController?.setNavigationBarHidden(true, animated: animated)
         
         // MARK:- Change this to 1 if you wanna hide the video
-        imageBG.alpha=0
+        imageBG.alpha = 0
         setUp()
 
     }
@@ -53,29 +53,40 @@ class StartViewController: UIViewController {
         // Get the path to the resource in the bundle
         let bundlePath = Bundle.main.path(forResource: "fridge_lady", ofType: "mp4")
         
+        
         guard bundlePath != nil else {
             return
         }
         
-        // Create a URL from it
+        // Create a URL from it and video item
         let url = URL(fileURLWithPath: bundlePath!)
-        
-        // Create the video player item
         let item = AVPlayerItem(url: url)
-        
-        // Create the player
         videoPlayer = AVPlayer(playerItem: item)
-        
-        // Create the layer
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer!)
         
-        // Adjust the size and frame
+        // Change size
         videoPlayerLayer?.frame = CGRect(x: -self.view.frame.size.width*1.6, y: 0, width: self.view.frame.size.width*4, height: self.view.frame.size.height)
         
+        //stick it behind the buttons
         view.layer.insertSublayer(videoPlayerLayer!, at: 0)
         
-        // Add it to the view and play it
+        // play
         videoPlayer?.playImmediately(atRate: 1.2)
+        
+        // Use Notification Center to loop video
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.videoPlayer?.currentItem, queue: .main) { [weak self] _ in
+            self?.videoPlayer?.seek(to: CMTime.zero)
+            self?.videoPlayer?.playImmediately(atRate: 2)
+        }
+
+
+        
+        
+    
+        
+
+            
+        
     }
 
     
