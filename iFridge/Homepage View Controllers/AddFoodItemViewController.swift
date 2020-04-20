@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
 
 class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate {
     
@@ -33,15 +36,56 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
         if (foodNameTextField.text == nil || expirationTextField.text == nil || foodImage.image == nil){
             print("No picture or text")
         } else {
+            // Create food and add to shared collection
             let food = FoodItem(foodName: foodNameTextField.text!, foodImage: foodImage.image!, expiration: expirationTextField.text!)
             sharedFoodCollection?.collection.append(food!)
             
+            // Add food to database
+            let dataBase = Firestore.firestore()
+            guard let user = Auth.auth().currentUser else { return }
+            
+            // Load image
+            guard let image = foodImage.image,
+                let data = image.jpegData(compressionQuality: 1.0) else {
+                    print("Error converting image to data")
+                    return
+            }
+            
+            let imageReference = Storage.storage().reference()
+                .child("imagesFolder")
+                .child("\(user.uid)" + "\(String(describing: food!.foodName!))")
+            
+            imageReference.putData(data, metadata: nil) { (metadata, err) in
+                if err != nil {
+                    print("Error saving image to storage")
+                }
+                
+                imageReference.downloadURL { (url, err) in
+                    if err != nil {
+                        print("Error downloading image url")
+                    }
+                    
+                    guard let url = url else {
+                        print("Can't load image url")
+                        return
+                    }
+                    
+                    let urlString = url.absoluteString
+                    
+                    dataBase.collection("users").document("\(user.uid)").collection("fridge").document("\(String(describing: food!.foodName!))").setData(["foodName": food!.foodName!, "foodImage":urlString ,"foodExpiration":food!.expiration!, "foodInputDate":food!.inputDate!, "foodExpiryDate":food!.expiryDate!]) { (err) in
+                        if (err != nil) {
+                            print(err!.localizedDescription)
+                        }
+                    }
+                }
+            }
+            
+            // Send alert that food has been saved
             let alert = UIAlertController(title: "Add Food", message: "Saved!", preferredStyle: .alert)
-            
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
             
+            // Reset values
             foodNameTextField.text = ""
             expirationTextField.text = ""
             foodImage.image = UIImage(systemName: "arrow.up.doc")
@@ -97,6 +141,5 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
     
 }

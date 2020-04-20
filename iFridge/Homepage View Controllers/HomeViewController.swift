@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import Firebase
+import FirebaseAuth
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
@@ -36,9 +38,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.isHidden = false
-
+        
         // Request Notification Access
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("notification request granted: (\(granted))")
@@ -142,10 +143,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {                  (action, sourceView, completionHandler) in
-            //Delete
+            // Get the food
+            let foodItem = (self.sharedFoodCollection?.collection[indexPath.row])!
+
+            //Delete from sharedFoodCollection
             self.sharedFoodCollection?.removeFoodAt(index: indexPath.row)
+            
+            // Delete from tableview
             self.tableView.deleteRows(at: [indexPath], with: .fade) // Call completion handler to dismiss the action button
-            completionHandler(true)          }
+            
+            // Delete from database
+            let dataBase = Firestore.firestore()
+            guard let user = Auth.auth().currentUser else { return }
+                       
+            dataBase.collection("users").document("\(user.uid)").collection("fridge").document("\(String(describing: foodItem.foodName!))").delete { (err) in
+                if (err != nil){
+                    print("Could not delete document")
+                }
+            }
+            
+            completionHandler(true)
+        }
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
         
         return swipeConfiguration

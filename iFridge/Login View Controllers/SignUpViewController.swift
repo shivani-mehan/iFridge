@@ -11,7 +11,7 @@ import FirebaseAuth
 import Firebase
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordMatchTextField: UITextField!
@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         //hide passwords
@@ -36,20 +36,19 @@ class SignUpViewController: UIViewController {
         
     }
     
-      //MARK: - Password regex
-//    func isPasswordValid(_ password : String) -> Bool {
-//
-//        //regex for password length being at least 4
-//        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{4,}$")
-//        return passwordTest.evaluate(with: password)
-//    }
+    //MARK: - Password regex
+    //    func isPasswordValid(_ password : String) -> Bool {
+    //
+    //        //regex for password length being at least 4
+    //        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{4,}$")
+    //        return passwordTest.evaluate(with: password)
+    //    }
     
     // Check the text fields and validates them
     func validateText() -> String? {
         
         // Check that all fields are filled in
-        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
+        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordMatchTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all fields."
         }
@@ -60,19 +59,18 @@ class SignUpViewController: UIViewController {
             return "password must be at least 6 characters"
         }
         
-//        if passwordMatchTextField != passwordTextField{
-//            return "Passwords do not match"
-//        }
+        if passwordMatchTextField.text != passwordTextField.text {
+            return "Passwords do not match"
+        }
         
         
-            
-//        let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//
-//        if isPasswordValid(trimmedPassword) == false {
-//            return "Please make sure your password is at least 4 characters."
-//        }
-//
-            
+        //        let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        //
+        //        if isPasswordValid(trimmedPassword) == false {
+        //            return "Please make sure your password is at least 4 characters."
+        //        }
+        //
+        
         return nil
     }
     
@@ -82,11 +80,8 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 1
     }
     
-
+    
     @IBAction func signInPressed(_ sender: Any) {
-        
-        
-        
         //validate text
         let error = validateText()
         
@@ -94,7 +89,7 @@ class SignUpViewController: UIViewController {
         if error != nil {
             displayError(error!)
         }
-        // no errors, continue to create user w/ firebase auth
+            // no errors, continue to create user w/ firebase auth
         else {
             
             // Clean the text
@@ -110,49 +105,35 @@ class SignUpViewController: UIViewController {
                     // Display error
                     self.displayError("User cannot be made error")
                     let alert = UIAlertController(title: "Something went wrong", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
-
+                    
                     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-
+                    
                     self.present(alert, animated: true)
                 }
                 else {
-                    
                     // User was successfully created, add to firestore
                     let db = Firestore.firestore()
                     
                     //MARK: - Storing passwords for testing. DELETE WHEN DONE
-                    db.collection("users").addDocument(data: ["email":email,"password":password, "uid": result!.user.uid ]) { (error) in
-                        
-                        if error != nil {
-                            // Show error message
-                            self.displayError("Error saving user data")
-                        }
+                    db.collection("users").document("\(result!.user.uid)").setData(["email":email,"password":password, "uid": result!.user.uid ]) { (err) in
+                            if (err != nil) {
+                                print(err!.localizedDescription)
+                            }
                     }
                     
                     // Transition to the home view
-                      let controller = (self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome"))!
-                      self.navigationController!.pushViewController(controller, animated: true)
-                    
-                        //MARK: - alert for testing
-//                    let alert = UIAlertController(title: "GREAT SUCCESS!", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
-//
-//                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-//                    alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: nil))
-//
-//                    self.present(alert, animated: true)
-                    
+                    let controller = (self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome"))!
+                    self.navigationController!.pushViewController(controller, animated: true)
                 }
                 
             }
-            
-            
             
         }
         
         
     }
-
-
+    
+    
     
 }
