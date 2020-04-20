@@ -15,6 +15,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordMatchTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +25,38 @@ class SignUpViewController: UIViewController {
     }
     
     func setUp(){
+        
         errorLabel.alpha = 0 //hide error label if not in use
         
     }
+    
+    func isPasswordValid(_ password : String) -> Bool {
+        
+        //regex for password length being at least 4
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{4,}$")
+        return passwordTest.evaluate(with: password)
+    }
+    
+    // Check the text fields and validates them
+    func validateText() -> String? {
+        
+        // Check that all fields are filled in
+        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields."
+            }
+            
+            
+        let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if isPasswordValid(trimmedPassword) == false {
+            return "Please make sure your password is at least 4 characters."
+        }
+        
+            
+        return nil
+    }
+    
     
 
     /*
