@@ -55,10 +55,10 @@ class LoginViewController: UIViewController {
             }
             else {
                 //need to handle moving to home
-//                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-//
-//                self.view.window?.rootViewController = homeViewController
-//                self.view.window?.makeKeyAndVisible()
+                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome") as? HomeViewController
+
+                self.view.window?.rootViewController = homeViewController
+                self.view.window?.makeKeyAndVisible()
             }
         }
     }
