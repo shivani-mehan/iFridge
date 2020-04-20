@@ -85,7 +85,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5R-1H-4Rd">
                                 <rect key="frame" x="16" y="400" width="369" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24f-fm-Npp">
                                 <rect key="frame" x="16" y="313" width="370" height="34"/>
@@ -120,21 +120,22 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-type your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7tr-DF-Qhr">
                                 <rect key="frame" x="16" y="488" width="369" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQg-ca-HrJ" userLabel="signUpButton">
                                 <rect key="frame" x="65" y="627" width="283" height="56"/>
                                 <state key="normal" image="button_sign-up"/>
                                 <connections>
                                     <action selector="signInPressed:" destination="XeD-aI-5SZ" eventType="touchDown" id="luO-OI-dTD"/>
-                                    <segue destination="Ttq-HH-dxg" kind="show" id="sw9-Kx-b7D"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnV-Ec-ErY" userLabel="Error Label">
-                                <rect key="frame" x="104" y="738" width="80" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" red="0.93794029950000002" green="0.35496029569999998" blue="0.33963656869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ERROR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnV-Ec-ErY" userLabel="Error Label">
+                                <rect key="frame" x="167" y="733" width="80" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="LgR-EU-TB8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -145,6 +146,7 @@
                             <constraint firstItem="2Uh-xv-zpm" firstAttribute="top" secondItem="kUU-Td-jra" secondAttribute="top" constant="36" id="8zQ-Lf-fD6"/>
                             <constraint firstItem="nQg-ca-HrJ" firstAttribute="top" secondItem="7tr-DF-Qhr" secondAttribute="bottom" constant="105" id="AqV-hj-YXB"/>
                             <constraint firstItem="7tr-DF-Qhr" firstAttribute="leading" secondItem="kUU-Td-jra" secondAttribute="leading" constant="16" id="BpB-jU-vkM"/>
+                            <constraint firstItem="fnV-Ec-ErY" firstAttribute="top" secondItem="nQg-ca-HrJ" secondAttribute="bottom" constant="50" id="DEW-Nk-RwC"/>
                             <constraint firstItem="VWD-sr-alN" firstAttribute="top" secondItem="24f-fm-Npp" secondAttribute="bottom" constant="16" id="FfV-vs-a2G"/>
                             <constraint firstItem="bSY-tP-G1t" firstAttribute="top" secondItem="Wuc-QR-cEy" secondAttribute="top" id="GsN-ci-4AW"/>
                             <constraint firstItem="kUU-Td-jra" firstAttribute="trailing" secondItem="7tr-DF-Qhr" secondAttribute="trailing" constant="29" id="HXQ-0G-tWc"/>
@@ -154,6 +156,7 @@
                             <constraint firstItem="39X-MQ-fCx" firstAttribute="top" secondItem="2Uh-xv-zpm" secondAttribute="bottom" constant="33" id="MMA-HG-5rx"/>
                             <constraint firstItem="39X-MQ-fCx" firstAttribute="leading" secondItem="kUU-Td-jra" secondAttribute="leading" constant="16" id="Mbp-Vj-BiN"/>
                             <constraint firstItem="kUU-Td-jra" firstAttribute="trailing" secondItem="2Uh-xv-zpm" secondAttribute="trailing" constant="133" id="NCu-EX-l7L"/>
+                            <constraint firstItem="fnV-Ec-ErY" firstAttribute="leading" secondItem="kUU-Td-jra" secondAttribute="leading" constant="167" id="NDU-HK-BDo"/>
                             <constraint firstItem="bSY-tP-G1t" firstAttribute="leading" secondItem="kUU-Td-jra" secondAttribute="leading" id="Sak-2C-4BS"/>
                             <constraint firstItem="c5R-1H-4Rd" firstAttribute="top" secondItem="VWD-sr-alN" secondAttribute="bottom" constant="8" id="VAt-nC-44j"/>
                             <constraint firstItem="2Uh-xv-zpm" firstAttribute="leading" secondItem="kUU-Td-jra" secondAttribute="leading" constant="132" id="Vqm-od-bRd"/>
@@ -165,6 +168,7 @@
                             <constraint firstItem="24f-fm-Npp" firstAttribute="leading" secondItem="kUU-Td-jra" secondAttribute="leading" constant="16" id="eI5-wh-pNa"/>
                             <constraint firstItem="kUU-Td-jra" firstAttribute="trailing" secondItem="24f-fm-Npp" secondAttribute="trailing" constant="28" id="evz-Xm-8ue"/>
                             <constraint firstItem="kUU-Td-jra" firstAttribute="trailing" secondItem="nQg-ca-HrJ" secondAttribute="trailing" constant="66" id="ivB-3c-0gO"/>
+                            <constraint firstItem="fnV-Ec-ErY" firstAttribute="centerX" secondItem="nQg-ca-HrJ" secondAttribute="centerX" id="kjd-cv-AoR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kUU-Td-jra"/>
                     </view>
@@ -722,7 +726,4 @@
         <image name="fridgeLogo" width="512" height="512"/>
         <image name="hamburgerMenu" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="sw9-Kx-b7D"/>
-    </inferredMetricsTieBreakers>
 </document>

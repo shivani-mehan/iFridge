@@ -23,6 +23,10 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //hide passwords
+        passwordTextField.isSecureTextEntry = true
+        passwordMatchTextField.isSecureTextEntry = true
         setUp()
     }
     
@@ -32,12 +36,13 @@ class SignUpViewController: UIViewController {
         
     }
     
-    func isPasswordValid(_ password : String) -> Bool {
-        
-        //regex for password length being at least 4
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{4,}$")
-        return passwordTest.evaluate(with: password)
-    }
+      //MARK: - Password regex
+//    func isPasswordValid(_ password : String) -> Bool {
+//
+//        //regex for password length being at least 4
+//        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{4,}$")
+//        return passwordTest.evaluate(with: password)
+//    }
     
     // Check the text fields and validates them
     func validateText() -> String? {
@@ -45,16 +50,27 @@ class SignUpViewController: UIViewController {
         // Check that all fields are filled in
         if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
+            
             return "Please fill in all fields."
-            }
-            
-            
-        let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        if isPasswordValid(trimmedPassword) == false {
-            return "Please make sure your password is at least 4 characters."
         }
         
+        if passwordTextField.text!.count < 6 {
+            return "password must be at least 6 characters"
+        }
+        
+        if passwordMatchTextField != passwordTextField{
+            return "Passwords do not match"
+        }
+        
+        
+            
+            
+//        let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//
+//        if isPasswordValid(trimmedPassword) == false {
+//            return "Please make sure your password is at least 4 characters."
+//        }
+//
             
         return nil
     }
@@ -75,7 +91,7 @@ class SignUpViewController: UIViewController {
         
         //show error via label
         if error != nil {
-            displayError(error!)
+            displayError("ERROR PLEASE RESTART APP")
         }
         // no errors, continue to create user w/ firebase auth
         else {
@@ -91,14 +107,21 @@ class SignUpViewController: UIViewController {
                 if err != nil {
                     
                     // Display error
-                    self.displayError("Error making user")
+                    self.displayError("User cannot be made error")
+                    let alert = UIAlertController(title: "Something went wrong", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+                    self.present(alert, animated: true)
                 }
                 else {
                     
                     // User was successfully created, add to firestore
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["email":email, "uid": result!.user.uid ]) { (error) in
+                    //MARK: - Storing passwords for testing. DELETE WHEN DONE
+                    db.collection("users").addDocument(data: ["email":email,"password":password, "uid": result!.user.uid ]) { (error) in
                         
                         if error != nil {
                             // Show error message
@@ -108,6 +131,14 @@ class SignUpViewController: UIViewController {
                     
                     // Transition to the home view
                     self.transitionToHome()
+                    
+                    let alert = UIAlertController(title: "GREAT SUCCESS!", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: nil))
+
+                    self.present(alert, animated: true)
+                    
                 }
                 
             }
@@ -125,7 +156,7 @@ class SignUpViewController: UIViewController {
 //
 //        view.window?.rootViewController = homeViewController
 //        view.window?.makeKeyAndVisible()
-        print("To do")
+        print("To do---------")
         
     }
     
