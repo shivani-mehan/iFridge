@@ -37,6 +37,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = false
+
         // Request Notification Access
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("notification request granted: (\(granted))")
@@ -107,6 +109,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "unwindToStart", sender: self)
     }
     
+    @IBAction func openFridge(_ sender: Any){
+        menuShowing = false
+        menu.isHidden = true
+    }
+    
     
     // MARK:  - Table Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -146,6 +153,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
+        // Hide menu
+        menuShowing = false
+        menu.isHidden = true
         
         if (segue.destination is DetailViewController){
             guard let selectedFoodCell = sender as? FridgeCellTableViewCell

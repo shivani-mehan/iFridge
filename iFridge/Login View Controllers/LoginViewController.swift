@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -74,9 +75,7 @@ class LoginViewController: UIViewController {
     }
     
     func someHandler(alert: UIAlertAction!) {
-        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome") as? HomeViewController
-
-        self.view.window?.rootViewController = homeViewController
-        self.view.window?.makeKeyAndVisible()
+        let controller = (self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome"))!
+        self.navigationController!.pushViewController(controller, animated: true)
     }
 }

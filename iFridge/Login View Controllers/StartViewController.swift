@@ -26,20 +26,17 @@ class StartViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.navigationBar.isHidden = true
         
         // MARK:- Change this to 1 if you wanna hide the video
         imageBG.alpha = 0
         setUp()
-
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
-    
     
     @IBAction func signInPressed(_ sender: Any) {
     }

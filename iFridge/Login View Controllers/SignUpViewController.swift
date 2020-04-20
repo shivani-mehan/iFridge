@@ -131,10 +131,8 @@ class SignUpViewController: UIViewController {
                     }
                     
                     // Transition to the home view
-                    let homeViewController = self.storyboard?.instantiateViewController(identifier: "iFridgeHome") as? HomeViewController
-            
-                    self.view.window?.rootViewController = homeViewController
-                    self.view.window?.makeKeyAndVisible()
+                      let controller = (self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome"))!
+                      self.navigationController!.pushViewController(controller, animated: true)
                     
                         //MARK: - alert for testing
 //                    let alert = UIAlertController(title: "GREAT SUCCESS!", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
