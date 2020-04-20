@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16267F06244D1FEE00C9F994 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */; };
+		16267F08244D276F00C9F994 /* fridge_lady.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 16267F07244D276F00C9F994 /* fridge_lady.mp4 */; };
+		16267F0A244D55B300C9F994 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16267F09244D55B300C9F994 /* .gitignore */; };
+		1652C49C244D6A58004EB91E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1652C49B244D6A57004EB91E /* .gitignore */; };
 		42E0751D2448F01800BF5C49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0751C2448F01800BF5C49 /* HomeViewController.swift */; };
 		42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */; };
 		42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */; };
@@ -23,9 +27,16 @@
 		42FA9DF6244796DA00C871D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FA9DF4244796DA00C871D3 /* LaunchScreen.storyboard */; };
 		42FA9E002447E29200C871D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9DFF2447E29200C871D3 /* LoginViewController.swift */; };
 		42FA9E022447E4B500C871D3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9E012447E4B500C871D3 /* SignUpViewController.swift */; };
+		B9E01B4E693BA355C11F265D /* Pods_iFridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2EE4D30FAE7370D1CB2FE9 /* Pods_iFridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B2EE4D30FAE7370D1CB2FE9 /* Pods_iFridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		16267F07244D276F00C9F994 /* fridge_lady.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fridge_lady.mp4; sourceTree = "<group>"; };
+		16267F09244D55B300C9F994 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFridge.release.xcconfig"; path = "Target Support Files/Pods-iFridge/Pods-iFridge.release.xcconfig"; sourceTree = "<group>"; };
+		1652C49B244D6A57004EB91E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		42E0751C2448F01800BF5C49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42E0751F244951FB00BF5C49 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		42E07520244951FB00BF5C49 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -61,6 +72,7 @@
 		42FA9DF7244796DA00C871D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42FA9DFF2447E29200C871D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		42FA9E012447E4B500C871D3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B50760BAF7068AD18C7E7433 /* Pods-iFridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFridge.debug.xcconfig"; path = "Target Support Files/Pods-iFridge/Pods-iFridge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +80,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E01B4E693BA355C11F265D /* Pods_iFridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16267F02244D19C500C9F994 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		42E0751E244951C900BF5C49 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +153,11 @@
 		42FA9DDD244796CA00C871D3 = {
 			isa = PBXGroup;
 			children = (
+				16267F09244D55B300C9F994 /* .gitignore */,
 				42FA9DE8244796CA00C871D3 /* iFridge */,
 				42FA9DE7244796CA00C871D3 /* Products */,
+				96400D3352190752C3DDD589 /* Pods */,
+				73C3940EAA6D2965153D54B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +172,9 @@
 		42FA9DE8244796CA00C871D3 /* iFridge */ = {
 			isa = PBXGroup;
 			children = (
+				16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */,
+				16267F07244D276F00C9F994 /* fridge_lady.mp4 */,
+				16267F02244D19C500C9F994 /* Utilities */,
 				42FA9DE9244796CA00C871D3 /* AppDelegate.swift */,
 				42FA9DEB244796CA00C871D3 /* SceneDelegate.swift */,
 				42E0753F244ABCDB00BF5C49 /* Login View Controllers */,
@@ -163,6 +189,23 @@
 			path = iFridge;
 			sourceTree = "<group>";
 		};
+		73C3940EAA6D2965153D54B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B2EE4D30FAE7370D1CB2FE9 /* Pods_iFridge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96400D3352190752C3DDD589 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B50760BAF7068AD18C7E7433 /* Pods-iFridge.debug.xcconfig */,
+				42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42FA9DFA244796DA00C871D3 /* Build configuration list for PBXNativeTarget "iFridge" */;
 			buildPhases = (
+				98470FDFFE35DD0F5CB6BDB0 /* [CP] Check Pods Manifest.lock */,
 				42FA9DE2244796CA00C871D3 /* Sources */,
 				42FA9DE3244796CA00C871D3 /* Frameworks */,
 				42FA9DE4244796CA00C871D3 /* Resources */,
+				081B16A3A45C5DFB3F4CE12A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,14 +266,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1652C49C244D6A58004EB91E /* .gitignore in Resources */,
 				42FA9DF6244796DA00C871D3 /* LaunchScreen.storyboard in Resources */,
+				16267F0A244D55B300C9F994 /* .gitignore in Resources */,
+				16267F08244D276F00C9F994 /* fridge_lady.mp4 in Resources */,
 				42FA9DF3244796DA00C871D3 /* Assets.xcassets in Resources */,
 				42FA9DF1244796CA00C871D3 /* Main.storyboard in Resources */,
 				42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */,
+				16267F06244D1FEE00C9F994 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		081B16A3A45C5DFB3F4CE12A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iFridge/Pods-iFridge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iFridge/Pods-iFridge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iFridge/Pods-iFridge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98470FDFFE35DD0F5CB6BDB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iFridge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42FA9DE2244796CA00C871D3 /* Sources */ = {
@@ -388,6 +479,7 @@
 		};
 		42FA9DFB244796DA00C871D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B50760BAF7068AD18C7E7433 /* Pods-iFridge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wlu.iFridge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlu.iFridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,6 +497,7 @@
 		};
 		42FA9DFC244796DA00C871D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -413,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wlu.iFridge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlu.iFridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
