@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var expiration: UILabel!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var expiryDate: UILabel!
+    @IBOutlet weak var inputDate: UILabel!
     
     var sharedFoodCollection : FoodItemCollection?
     
@@ -28,6 +29,7 @@ class DetailViewController: UIViewController {
         let myFormatter = DateFormatter()
         myFormatter.dateStyle = .short
         expiryDate.text = myFormatter.string(from: food!.getExpiryDate())
+        inputDate.text = myFormatter.string(from: food!.getInputDate())
         
         let expired = food!.checkIfExpired()
         if (expired){
