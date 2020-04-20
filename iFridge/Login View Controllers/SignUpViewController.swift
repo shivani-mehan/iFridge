@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -57,18 +59,74 @@ class SignUpViewController: UIViewController {
         return nil
     }
     
+    func displayError(_ message:String) {
+        
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     @IBAction func signInPressed(_ sender: Any) {
+        
+        
+        
+        //validate text
+        let error = validateText()
+        
+        //show error via label
+        if error != nil {
+            displayError(error!)
+        }
+        // no errors, continue to create user w/ firebase auth
+        else {
+            
+            // Clean the text
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Create user
+            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+                
+                // Check for errors
+                if err != nil {
+                    
+                    // Display error
+                    self.displayError("Error making user")
+                }
+                else {
+                    
+                    // User was successfully created, add to firestore
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["email":email, "uid": result!.user.uid ]) { (error) in
+                        
+                        if error != nil {
+                            // Show error message
+                            self.displayError("Error saving user data")
+                        }
+                    }
+                    
+                    // Transition to the home view
+                    self.transitionToHome()
+                }
+                
+            }
+            
+            
+            
+        }
+        
+        
     }
+
+    func transitionToHome() {
+        
+//        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+//
+//        view.window?.rootViewController = homeViewController
+//        view.window?.makeKeyAndVisible()
+        print("To do")
+        
+    }
+    
 }
