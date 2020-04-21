@@ -16,7 +16,7 @@
 iFridge is an inventory manager for your fridge. 
 This app was created for the CP469 Winter 2020 final project at Wilfrid Laurier University, taught by Dr. Chinh Hoang.
 
-<p align="center"><img  align="center"  src="https://i.imgur.com/XPhpOOt.png" width=400px><p/>
+<p align="center"><img  align="center"  src="https://i.imgur.com/wnx2UWa.png" width=400px><p/>
 
 
 ### Problem Statement:
@@ -52,7 +52,6 @@ Extra features include the ability to make your own shopping list and, time perm
 - More search filtering
 - Extended error checking and validation
 - Add images directly from the camera
-- Suggest recipes from items found in fridge
 - Create a shopping list
 
 
