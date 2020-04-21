@@ -168,7 +168,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
     }
-
+    //open github page when about is pressed
+    @IBAction func aboutButton(_ sender: Any) {
+        if let url = URL(string: "https://github.com/shivani-mehan/iFridge") {
+            UIApplication.shared.open(url)
+        }
+    }
     
     @IBAction func openFridge(_ sender: Any){
         menuShowing = false
