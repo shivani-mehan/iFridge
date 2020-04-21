@@ -10,6 +10,7 @@
 		16267F06244D1FEE00C9F994 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */; };
 		16267F08244D276F00C9F994 /* fridge_lady.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 16267F07244D276F00C9F994 /* fridge_lady.mp4 */; };
 		1652C49C244D6A58004EB91E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1652C49B244D6A57004EB91E /* .gitignore */; };
+		4222CC2D244EAF1400458C13 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222CC2C244EAF1400458C13 /* RecipesViewController.swift */; };
 		42E0751D2448F01800BF5C49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0751C2448F01800BF5C49 /* HomeViewController.swift */; };
 		42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */; };
 		42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */; };
@@ -35,6 +36,7 @@
 		16267F07244D276F00C9F994 /* fridge_lady.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fridge_lady.mp4; sourceTree = "<group>"; };
 		16267F09244D55B300C9F994 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1652C49B244D6A57004EB91E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4222CC2C244EAF1400458C13 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFridge.release.xcconfig"; path = "Target Support Files/Pods-iFridge/Pods-iFridge.release.xcconfig"; sourceTree = "<group>"; };
 		42E0751C2448F01800BF5C49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42E0751F244951FB00BF5C49 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				42E07536244A69FC00BF5C49 /* AddFoodItemViewController.swift */,
 				42E075322449571E00BF5C49 /* FridgeCellTableViewCell.swift */,
 				42E07540244BE48800BF5C49 /* DetailViewController.swift */,
+				4222CC2C244EAF1400458C13 /* RecipesViewController.swift */,
 			);
 			path = "Homepage View Controllers";
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				42FA9DEE244796CA00C871D3 /* StartViewController.swift in Sources */,
 				42E0753C244ABBD300BF5C49 /* SharingFoodCollection.swift in Sources */,
 				42FA9DEA244796CA00C871D3 /* AppDelegate.swift in Sources */,
+				4222CC2D244EAF1400458C13 /* RecipesViewController.swift in Sources */,
 				42FA9DEC244796CA00C871D3 /* SceneDelegate.swift in Sources */,
 				42FA9E022447E4B500C871D3 /* SignUpViewController.swift in Sources */,
 				42E075332449571E00BF5C49 /* FridgeCellTableViewCell.swift in Sources */,

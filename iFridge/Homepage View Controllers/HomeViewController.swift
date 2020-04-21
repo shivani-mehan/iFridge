@@ -84,8 +84,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    
                     // Change Firestore dates to Dates
                     let inputTimestamp: Timestamp = document.get("foodInputDate") as! Timestamp
                     let inputDate: Date = inputTimestamp.dateValue()
@@ -180,6 +178,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menu.isHidden = true
     }
     
+    @IBAction func recipesButton(_ sender: Any) {
+        
+    }
     
     // MARK:  - Table Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
