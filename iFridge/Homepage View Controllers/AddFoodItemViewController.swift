@@ -118,7 +118,6 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
                         }
                     }
                     
-                    
                 }
             }
             
