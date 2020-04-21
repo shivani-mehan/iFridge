@@ -5,6 +5,10 @@
 
 #### <div align="center">Your Fridge Management Solution</div>
 
+#### <div align="center">Created by: [Shivani Mehan](https://github.com/shivani-mehan/) and [Jacob Ramsaywak](https://github.com/Cephalonyx/)</div>
+
+
+
 ---
 
 ### About:
@@ -18,7 +22,7 @@ This app was created for the CP469 Winter 2020 final project at Wilfrid Laurier 
 ### Problem Statement:
 
 Food waste is a huge problem in Canada: ["A whopping 58 percent of all food produced in Canada — 35.5 million tonnes — is lost
-or wasted, according to a new report”, ](​https://www.cbc.ca/news/canada/toronto/food-waste-report-second-harvest-1.4981728​).
+or wasted, according to a new report”](https://www.cbc.ca/news/canada/toronto/food-waste-report-second-harvest-1.4981728).
 
 iFridge is a project that aims to reduce food waste. It is  a 'digital fridge' that matches what you have
 in your fridge at home and allows users to easily keep track of their food inventory.
@@ -30,13 +34,13 @@ Extra features include the ability to make your own shopping list and, time perm
 ### How to use:
 
 #### 1) Requirements
-1.1) XCode 11+ (Requires MacOS Catalina)
+- 1.1) XCode 11+ (Requires MacOS Catalina)
 
 #### 2) Clone repo
 
-2.1) `git clone https://github.com/shivani-mehan/iFridge.git`
-2.2) Move into project directory
-2.3) Launch project from `iFridge.xcworkspace` (using .xcodeproj will not work as it will not identify Firebase dependencies)
+- 2.1) `git clone https://github.com/shivani-mehan/iFridge.git`
+- 2.2) Move into project directory
+- 2.3) Launch project from `iFridge.xcworkspace` (using .xcodeproj will not work as it will not identify Firebase dependencies)
 
 #### 3) Run the app
 
@@ -56,6 +60,4 @@ Extra features include the ability to make your own shopping list and, time perm
 
 ![Firebase](https://firebase.google.com/images/social.png)
 
-Created by: 
-[Shivani Mehan](https://github.com/shivani-mehan/)
-[Jacob Ramsaywak](https://github.com/Cephalonyx/)
+
