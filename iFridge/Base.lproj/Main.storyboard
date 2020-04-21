@@ -528,6 +528,9 @@
                                         <state key="normal" title="About">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="aboutButton:" destination="Ttq-HH-dxg" eventType="touchUpInside" id="zCm-ej-jGY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIx-47-iQ7">
                                         <rect key="frame" x="67" y="324" width="67" height="39"/>
