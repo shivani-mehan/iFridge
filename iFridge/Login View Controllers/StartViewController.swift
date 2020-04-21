@@ -36,6 +36,9 @@ class StartViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        //should stop video if we hit back button 
+        imageBG.alpha = 1
+
     }
     
     @IBAction func signInPressed(_ sender: Any) {
@@ -73,26 +76,10 @@ class StartViewController: UIViewController {
         // Use Notification Center to loop video
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.videoPlayer?.currentItem, queue: .main) { [weak self] _ in
             self?.videoPlayer?.seek(to: CMTime.zero)
-            self?.videoPlayer?.playImmediately(atRate: 2)
+            self?.videoPlayer?.playImmediately(atRate: 1.5)
         }
-
-
-        
-        
-    
-        
-
-            
         
     }
-
-    
-    @IBAction func unwindToStartView(segue:UIStoryboardSegue) {
-        
-        
-    }
-
-
 
 }
 

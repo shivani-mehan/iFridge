@@ -26,6 +26,13 @@ class LoginViewController: UIViewController {
         errorLabel.alpha = 0 //hide error label if not in use
     }
     
+    
+    
+    //dismiss keyboard when touching outside textfields
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
 
     // MARK: - Navigation
 
