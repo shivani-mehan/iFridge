@@ -16,7 +16,7 @@
 iFridge is an inventory manager for your fridge. 
 This app was created for the CP469 Winter 2020 final project at Wilfrid Laurier University, taught by Dr. Chinh Hoang.
 
-<p align="center"><img  align="center"  src="https://i.imgur.com/XPhpOOt.png" width=400px><p/>
+<p align="center"><img  align="center"  src="https://i.imgur.com/wnx2UWa.png" width=400px><p/>
 
 
 ### Problem Statement:
@@ -27,9 +27,9 @@ or wasted, according to a new report”](https://www.cbc.ca/news/canada/toronto/
 iFridge is a project that aims to reduce food waste. It is  a 'digital fridge' that matches what you have
 in your fridge at home and allows users to easily keep track of their food inventory.
 
- Users are notified when their food is about to expire, and having an easy visual of all the food that they have helps to avoid unnecessarily buying food when grocery shopping.
+Users are notified when their food is about to expire, and having an easy visual of all the food that they have helps to avoid unnecessarily buying food when grocery shopping.
 
-Extra features include the ability to make your own shopping list and, time permitting, the ability to create recipe ideas based on items in their fridge database.
+Extra features include the ability to create recipe ideas based on items in your fridge database and, time permitting, the ability to make your own shopping list.
 
 ### How to use:
 
@@ -52,12 +52,13 @@ Extra features include the ability to make your own shopping list and, time perm
 - More search filtering
 - Extended error checking and validation
 - Add images directly from the camera
-- Suggest recipes from items found in fridge
 - Create a shopping list
 
 
 
 
 ![Firebase](https://firebase.google.com/images/social.png)
+
+![Spoonacular](https://spoonacular.com/images/spoonacular-logo-b.svg)
 
 
