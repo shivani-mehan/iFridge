@@ -156,7 +156,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func logoutButton(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToStart", sender: self)
+        performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
     }
     
     @IBAction func openFridge(_ sender: Any){
