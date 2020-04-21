@@ -15,6 +15,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var imageBG: UIImageView!
     var videoPlayer:AVPlayer?
     
+    var wentBack = 0
     var videoPlayerLayer:AVPlayerLayer?
     
     @IBOutlet weak var signInButton: UIButton!
@@ -28,8 +29,13 @@ class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         
-        // MARK:- Change this to 1 if you wanna hide the video
+        // MARK:- When moving back to startview, hide the video
         imageBG.alpha = 0
+
+        if wentBack == 1{
+             imageBG.alpha = 1
+        }
+           
         setUp()
     }
 
@@ -37,7 +43,7 @@ class StartViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
         //should stop video if we hit back button 
-        imageBG.alpha = 1
+        wentBack = 1
 
     }
     
