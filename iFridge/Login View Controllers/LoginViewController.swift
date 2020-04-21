@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
             
             if error != nil {
                 // Couldn't sign in
-                self.errorLabel.text = error!.localizedDescription
+                self.errorLabel.text = "Invalid. Try again"
                 self.errorLabel.alpha = 1
             }
             else {
