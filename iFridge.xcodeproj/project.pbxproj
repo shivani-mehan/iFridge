@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		16267F06244D1FEE00C9F994 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */; };
 		16267F08244D276F00C9F994 /* fridge_lady.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 16267F07244D276F00C9F994 /* fridge_lady.mp4 */; };
-		16267F0A244D55B300C9F994 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16267F09244D55B300C9F994 /* .gitignore */; };
 		1652C49C244D6A58004EB91E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1652C49B244D6A57004EB91E /* .gitignore */; };
 		42E0751D2448F01800BF5C49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0751C2448F01800BF5C49 /* HomeViewController.swift */; };
 		42E075312449523B00BF5C49 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E07528244951FC00BF5C49 /* Poppins-Regular.ttf */; };
@@ -35,8 +34,8 @@
 		16267F05244D1FEE00C9F994 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16267F07244D276F00C9F994 /* fridge_lady.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fridge_lady.mp4; sourceTree = "<group>"; };
 		16267F09244D55B300C9F994 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFridge.release.xcconfig"; path = "Target Support Files/Pods-iFridge/Pods-iFridge.release.xcconfig"; sourceTree = "<group>"; };
 		1652C49B244D6A57004EB91E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		42833453AA225DF2ABBD8C90 /* Pods-iFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFridge.release.xcconfig"; path = "Target Support Files/Pods-iFridge/Pods-iFridge.release.xcconfig"; sourceTree = "<group>"; };
 		42E0751C2448F01800BF5C49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42E0751F244951FB00BF5C49 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		42E07520244951FB00BF5C49 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -92,6 +91,14 @@
 			children = (
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4222CC29244E5C9A00458C13 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				1652C49B244D6A57004EB91E /* .gitignore */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		42E0751E244951C900BF5C49 /* Fonts */ = {
@@ -158,6 +165,7 @@
 				42FA9DE7244796CA00C871D3 /* Products */,
 				96400D3352190752C3DDD589 /* Pods */,
 				73C3940EAA6D2965153D54B8 /* Frameworks */,
+				4222CC29244E5C9A00458C13 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,7 +276,6 @@
 			files = (
 				1652C49C244D6A58004EB91E /* .gitignore in Resources */,
 				42FA9DF6244796DA00C871D3 /* LaunchScreen.storyboard in Resources */,
-				16267F0A244D55B300C9F994 /* .gitignore in Resources */,
 				16267F08244D276F00C9F994 /* fridge_lady.mp4 in Resources */,
 				42FA9DF3244796DA00C871D3 /* Assets.xcassets in Resources */,
 				42FA9DF1244796CA00C871D3 /* Main.storyboard in Resources */,

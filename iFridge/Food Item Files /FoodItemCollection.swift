@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import Firebase
-import FirebaseAuth
 
 class FoodItemCollection: NSObject, NSCoding {
     
@@ -18,34 +16,9 @@ class FoodItemCollection: NSObject, NSCoding {
     let collectionKey = "collectionKey"
     let currentKey = "currentKey"
     // MARK: - NSCoding methods
+    
     override init(){
         super.init()
-        setup()
-    }
-    
-    // Read database and populate the collection? **
-    func setup(){
-        // Read existing food items into array
-        let dataBase = Firestore.firestore()
-        guard let user = Auth.auth().currentUser else { return }
-        
-        dataBase.collection("users").document("\(user.uid)").collection("fridge").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    print(document.get("foodName")!)
-//                    let date1 = document.get("foodInputDate")!)
-//                    let date = postTimestamp.dateValue()
-
-                }
-            }
-        }
-        
-        // Sample food
-        let food = FoodItem(foodName: "Bananas", foodImage: UIImage(named: "bananas")!, expiration: "3")
-        self.collection.append(food!)
     }
     
     func encode(with acoder: NSCoder) {

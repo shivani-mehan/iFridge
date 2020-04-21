@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
@@ -56,6 +57,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         SharingFoodCollection.sharedFoodCollection.loadFoodCollection()
         sharedFoodCollection = SharingFoodCollection.sharedFoodCollection.foodCollection
         
+        // Read objects from database
+        loadDatabaseItems()
+        
         // Search Bar Set Up
         self.resultSearchController = ({
             
@@ -69,6 +73,51 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return controller
             
         })()
+    }
+    
+    func loadDatabaseItems(){
+        let dataBase = Firestore.firestore()
+        guard let user = Auth.auth().currentUser else { return }
+        
+        dataBase.collection("users").document("\(user.uid)").collection("fridge").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    
+                    // Change Firestore dates to Dates
+                    let inputTimestamp: Timestamp = document.get("foodInputDate") as! Timestamp
+                    let inputDate: Date = inputTimestamp.dateValue()
+                    
+                    let expiryTimestamp: Timestamp = document.get("foodExpiryDate") as! Timestamp
+                    let expiryDate: Date = expiryTimestamp.dateValue()
+                    
+                    // Get image
+                    let storageRef = Storage.storage().reference().child("imagesFolder").child("\(user.uid)" + "\(document.get("foodName")!)")
+                    
+                    storageRef.getData(maxSize: 15 * 1024 * 1024) { data, error in
+                        if let error = error {
+                            print("An error occurred in downloading the image")
+                            print(error.localizedDescription)
+                        } else {
+                            let image = UIImage(data: data!)
+                            
+                            let food = FoodItem(foodName: document.get("foodName")! as! String, foodImage: image!, expiration: document.get("foodExpiration")! as! String)
+                            
+                            food?.changeInputDate(date: inputDate)
+                            food?.changeExpiryDate(date: expiryDate)
+                            food?.calculateDaysUntilExpiry()
+                            
+                            self.sharedFoodCollection?.collection.append(food!)
+                            self.tableView.reloadData()
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
     }
     
     @objc func selectExpiredItem(_ notification: NSNotification){
@@ -145,7 +194,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {                  (action, sourceView, completionHandler) in
             // Get the food
             let foodItem = (self.sharedFoodCollection?.collection[indexPath.row])!
-
+            
             //Delete from sharedFoodCollection
             self.sharedFoodCollection?.removeFoodAt(index: indexPath.row)
             
@@ -155,7 +204,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             // Delete from database
             let dataBase = Firestore.firestore()
             guard let user = Auth.auth().currentUser else { return }
-                       
+            
             dataBase.collection("users").document("\(user.uid)").collection("fridge").document("\(String(describing: foodItem.foodName!))").delete { (err) in
                 if (err != nil){
                     print("Could not delete document")

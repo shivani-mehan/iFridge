@@ -111,7 +111,6 @@ class FoodItem: NSObject, NSCoding {
         self.expiration = String(daysUntilExpiry.day!)
     }
     
-    // MARK: - For debugging purposes
     func changeInputDate(date: Date){
         self.inputDate = date
     }
