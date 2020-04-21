@@ -156,8 +156,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func logoutButton(_ sender: Any) {
+        
+        //Perform firebase logout and then unwind to startview
+        
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+        
         performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
     }
+
     
     @IBAction func openFridge(_ sender: Any){
         menuShowing = false
