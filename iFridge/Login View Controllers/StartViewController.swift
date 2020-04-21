@@ -15,6 +15,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var imageBG: UIImageView!
     var videoPlayer:AVPlayer?
     
+    var wentBack = 0
     var videoPlayerLayer:AVPlayerLayer?
     
     @IBOutlet weak var signInButton: UIButton!
@@ -28,14 +29,22 @@ class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         
-        // MARK:- Change this to 1 if you wanna hide the video
+        // MARK:- When moving back to startview, hide the video
         imageBG.alpha = 0
+
+        if wentBack == 1{
+             imageBG.alpha = 1
+        }
+           
         setUp()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        //should stop video if we hit back button 
+        wentBack = 1
+
     }
     
     @IBAction func signInPressed(_ sender: Any) {
@@ -73,26 +82,10 @@ class StartViewController: UIViewController {
         // Use Notification Center to loop video
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.videoPlayer?.currentItem, queue: .main) { [weak self] _ in
             self?.videoPlayer?.seek(to: CMTime.zero)
-            self?.videoPlayer?.playImmediately(atRate: 2)
+            self?.videoPlayer?.playImmediately(atRate: 1.5)
         }
-
-
-        
-        
-    
-        
-
-            
         
     }
-
-    
-    @IBAction func unwindToStartView(segue:UIStoryboardSegue) {
-        
-        
-    }
-
-
 
 }
 

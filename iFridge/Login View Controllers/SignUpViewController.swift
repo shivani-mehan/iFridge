@@ -36,6 +36,26 @@ class SignUpViewController: UIViewController {
         
     }
     
+    //dismiss keyboard when touching outside textfields
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //MARK: - Password regex
     //    func isPasswordValid(_ password : String) -> Bool {
     //
