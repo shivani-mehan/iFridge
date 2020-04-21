@@ -12,7 +12,8 @@
 iFridge is an inventory manager for your fridge. 
 This app was created for the CP469 Winter 2020 final project at Wilfrid Laurier University, taught by Dr. Chinh Hoang.
 
-![Poster](https://i.imgur.com/XPhpOOt.png =500x)
+<p align="center"><img  align="center"  src="https://i.imgur.com/XPhpOOt.png" width=400px><p/>
+
 
 ### Problem Statement:
 
@@ -54,6 +55,7 @@ Extra features include the ability to make your own shopping list and, time perm
 
 
 ![Firebase](https://firebase.google.com/images/social.png)
-Created by: Shivani Mehan and Jacob Ramsaywak
-[https://github.com/shivani-mehan/](https://github.com/shivani-mehan/)
-[https://github.com/Cephalonyx/](https://github.com/Cephalonyx/)
+
+Created by: 
+[Shivani Mehan](https://github.com/shivani-mehan/)
+[Jacob Ramsaywak](https://github.com/Cephalonyx/)
