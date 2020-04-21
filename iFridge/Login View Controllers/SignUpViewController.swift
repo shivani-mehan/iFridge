@@ -43,28 +43,6 @@ class SignUpViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //MARK: - Password regex
-    //    func isPasswordValid(_ password : String) -> Bool {
-    //
-    //        //regex for password length being at least 4
-    //        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{4,}$")
-    //        return passwordTest.evaluate(with: password)
-    //    }
-    
-    // Check the text fields and validates them
     func validateText() -> String? {
         
         // Check that all fields are filled in
@@ -82,14 +60,6 @@ class SignUpViewController: UIViewController {
         if passwordMatchTextField.text != passwordTextField.text {
             return "Passwords do not match"
         }
-        
-        
-        //        let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        //
-        //        if isPasswordValid(trimmedPassword) == false {
-        //            return "Please make sure your password is at least 4 characters."
-        //        }
-        //
         
         return nil
     }
@@ -139,9 +109,9 @@ class SignUpViewController: UIViewController {
                     
                     //MARK: - Storing passwords for testing. DELETE WHEN DONE
                     db.collection("users").document("\(result!.user.uid)").setData(["email":email,"password":password, "uid": result!.user.uid ]) { (err) in
-                            if (err != nil) {
-                                print(err!.localizedDescription)
-                            }
+                        if (err != nil) {
+                            print(err!.localizedDescription)
+                        }
                     }
                     
                     // Transition to the home view
