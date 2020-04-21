@@ -32,11 +32,6 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
         expirationTextField.delegate = self
     }
     
-    
-    
- 
-
-    
     func validateText() -> String? {
         
         // Check that all fields are filled in
@@ -46,7 +41,6 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
         }
         
 
-    
         let numcheck = Int(expirationTextField.text!)
         //check expiration date
         if numcheck == nil || numcheck! < 0 {
@@ -59,33 +53,29 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
     
     func displayError(_ message:String) {
         
-//        errorLabel.text = message
-//        errorLabel.alpha = 1
+        //        errorLabel.text = message
+        //        errorLabel.alpha = 1
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        
-        
         
         //validate text
         let error = validateText()
         
         if error != nil {
             displayError(error!)
-        self.displayError(error!)
-        let alert = UIAlertController(title: "Something went wrong", message: "Please try again.", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-        
-        self.present(alert, animated: true)
-        self.expirationTextField.text = ""
-        self.foodNameTextField.text = ""
+            self.displayError(error!)
+            let alert = UIAlertController(title: "Something went wrong", message: "Please try again.", preferredStyle: .alert)
             
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            self.expirationTextField.text = ""
+            self.foodNameTextField.text = ""
             
         }
         else{
-        
- 
+            
             // Create food and add to shared collection
             let food = FoodItem(foodName: foodNameTextField.text!, foodImage: foodImage.image!, expiration: expirationTextField.text!)
             sharedFoodCollection?.collection.append(food!)
@@ -143,15 +133,11 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
             foodImage.image = UIImage(systemName: "arrow.up.doc")
             
             //move back to homeview
-            
-            
-            
         }
     }
     
     func someHandler(alert: UIAlertAction!) {
-        let controller = (self.storyboard?.instantiateViewController(withIdentifier: "iFridgeHome"))!
-        self.navigationController!.pushViewController(controller, animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func tappedImage(_ sender: UITapGestureRecognizer) {
