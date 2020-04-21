@@ -123,13 +123,15 @@ class SignUpViewController: UIViewController {
                 if err != nil {
                     
                     // Display error
-                    self.displayError("User cannot be made error")
-                    let alert = UIAlertController(title: "Something went wrong", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+                    self.displayError("Error: User cannot be made.")
+                    let alert = UIAlertController(title: "Something went wrong", message: "Please try again.", preferredStyle: .alert)
                     
-                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
                     
                     self.present(alert, animated: true)
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                    
                 }
                 else {
                     // User was successfully created, add to firestore
